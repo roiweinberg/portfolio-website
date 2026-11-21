@@ -132,24 +132,24 @@
 
   <figure>
     <img src="images/hero.png" alt="The Plan tool, showing a multi-select remediation proposal gated on user approval">
-    <figcaption>Plan &mdash; a unified, multi-select remediation proposal, gated on explicit user approval.</figcaption>
+    <figcaption>Plan - a unified, multi-select remediation proposal, gated on explicit user approval.</figcaption>
   </figure>
 
   <section>
     <h2 class="section">Context</h2>
-    <p>Klaudia is Komodor's AI assistant, originally built to investigate Kubernetes issues and recommend &mdash; and apply &mdash; fixes. As it grew more capable &mdash; applying patches, creating Git changes, opening Jira tickets &mdash; those capabilities shipped as separate tools, each with its own UI and logic. What made sense technically didn't make sense as a user experience. My work turned Klaudia's individual capabilities into one coherent interaction model for how it takes action.</p>
+    <p>Klaudia is Komodor's AI assistant, originally built to investigate Kubernetes issues and recommend - and apply - fixes. As it grew more capable - applying patches, creating Git changes, opening Jira tickets - those capabilities shipped as separate tools, each with its own UI and logic. What made sense technically didn't make sense as a user experience. My work turned Klaudia's individual capabilities into one coherent interaction model for how it takes action.</p>
   </section>
 
   <section>
     <h2 class="section">The problem</h2>
-    <p>Remediation after an RCA is rarely a single action. A root cause might call for a patch, a Git action, and a Jira ticket together &mdash; but the product had no way to propose that as one coherent set. It could only offer one tool at a time. Early on, actions were mapped directly to capabilities: Patch, Git, Jira &mdash; each its own tool, easy to follow when only one action was available.</p>
+    <p>Remediation after an RCA is rarely a single action. A root cause might call for a patch, a Git action, and a Jira ticket together - but the product had no way to propose that as one coherent set. It could only offer one tool at a time. Early on, actions were mapped directly to capabilities: Patch, Git, Jira - each its own tool, easy to follow when only one action was available.</p>
 
     <figure>
       <img src="images/img1-tool-gallery.png" alt="A gallery of separate remediation tools: Git, Jira, and Patch">
-      <figcaption>The gallery of "remediation" tools &mdash; Git, Jira, and Patch &mdash; each its own separate entry point.</figcaption>
+      <figcaption>The gallery of "remediation" tools - Git, Jira, and Patch - each its own separate entry point.</figcaption>
     </figure>
 
-    <p>The main pain point was that we were exposing implementation, not intent. It was becoming apparent that a mediator was needed to help users express their needs &mdash; the complexity of the agent shouldn't become complexity for the user.</p>
+    <p>The main pain point was that we were exposing implementation, not intent. It was becoming apparent that a mediator was needed to help users express their needs - the complexity of the agent shouldn't become complexity for the user.</p>
   </section>
 
   <section>
@@ -166,11 +166,11 @@
     <h2 class="section">Key stages</h2>
 
     <h3 class="stage">Separating decision from execution</h3>
-    <p>Instead of surfacing tools independently, Klaudia began presenting remediation paths together &mdash; "apply the fix," "open a Git change," "file a ticket" &mdash; so users chose an outcome, not a mechanism.</p>
+    <p>Instead of surfacing tools independently, Klaudia began presenting remediation paths together - "apply the fix," "open a Git change," "file a ticket" - so users chose an outcome, not a mechanism.</p>
 
     <figure>
       <img src="images/img2-selection-tool.png" alt="An early selection tool answering which single action should happen">
-      <figcaption>The "selection tool" answered "which action should happen?" &mdash; but it assumed the user only wanted one thing done. It wasn't enough.</figcaption>
+      <figcaption>The "selection tool" answered "which action should happen?" - but it assumed the user only wanted one thing done. It wasn't enough.</figcaption>
     </figure>
 
     <h3 class="stage">Handling the deeper-investigation path without a paywall</h3>
@@ -178,23 +178,23 @@
 
     <figure>
       <img src="images/img3-deeper-investigation.png" alt="The deeper-investigation option styled as a lightweight text link below the main remediation options">
-      <figcaption>I intentionally gave it a visually lighter treatment &mdash; a plain text link below the main options, styled to look optional rather than equal &mdash; to keep the pricier model's volume in check through visual hierarchy, instead of hiding the capability entirely or gating it behind cost.</figcaption>
+      <figcaption>I intentionally gave it a visually lighter treatment - a plain text link below the main options, styled to look optional rather than equal - to keep the pricier model's volume in check through visual hierarchy, instead of hiding the capability entirely or gating it behind cost.</figcaption>
     </figure>
   </section>
 
   <section>
     <h2 class="section">Final design</h2>
-    <p>I designed Plan to surface all relevant remediation options together. Once an RCA identifies an issue &mdash; prepare an immediate fix, prepare a pull request (a permanent fix), open a Jira ticket &mdash; they appear as a multi-select checklist rather than a single choice. The user is free to select one or several, and each option carries an explicit note that it still needs their approval before it runs.</p>
+    <p>I designed Plan to surface all relevant remediation options together. Once an RCA identifies an issue - prepare an immediate fix, prepare a pull request (a permanent fix), open a Jira ticket - they appear as a multi-select checklist rather than a single choice. The user is free to select one or several, and each option carries an explicit note that it still needs their approval before it runs.</p>
     <p>The shipped experience is built around three principles:</p>
     <ul class="outcomes">
       <li><b>Proposal, not execution.</b> Plan surfaces what Klaudia recommends as remediation; it never runs an action without the user checking the box and confirming approval.</li>
       <li><b>One coherent set, not separate tools.</b> Immediate Fix, Pull Request, and Jira Ticket are presented together as one multi-select response to the RCA's finding, not as three things the user has to seek out individually.</li>
-      <li><b>Cost-aware visual hierarchy.</b> The deeper-investigation option is real, free, and available &mdash; but its lighter, link-style treatment keeps it from competing for attention, proportionate to when it's actually needed.</li>
+      <li><b>Cost-aware visual hierarchy.</b> The deeper-investigation option is real, free, and available - but its lighter, link-style treatment keeps it from competing for attention, proportionate to when it's actually needed.</li>
     </ul>
 
     <figure style="margin-top: 40px;">
       <img src="images/img4-final-plan.png" alt="The final Plan tool interface, a multi-select remediation proposal">
-      <figcaption>The final Plan tool &mdash; a multi-select remediation proposal, gated on explicit approval.</figcaption>
+      <figcaption>The final Plan tool - a multi-select remediation proposal, gated on explicit approval.</figcaption>
     </figure>
   </section>
 
@@ -202,7 +202,7 @@
     <h2 class="section">Impact</h2>
     <p>Plan significantly reduced the cognitive load of turning an RCA's findings into a fix. Users are told all of their options and are able to make a properly conscious decision.</p>
     <p>Visually deprioritizing the deeper-investigation option kept usage of the pricier model in check while keeping the capability genuinely available and free.</p>
-    <p>Because new remediation actions can be added as building blocks inside a plan, the design also stayed durable as Klaudia's capabilities kept growing &mdash; new actions don't require users to learn a new tool each time.</p>
+    <p>Because new remediation actions can be added as building blocks inside a plan, the design also stayed durable as Klaudia's capabilities kept growing - new actions don't require users to learn a new tool each time.</p>
   </section>
 
   <footer>

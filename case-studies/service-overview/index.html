@@ -132,17 +132,17 @@
 
   <figure>
     <img src="images/hero.png" alt="Komodor's Service Overview tab, the new default landing view for the Service View">
-    <figcaption>Komodor's Service Overview tab &mdash; the new default landing point for the Service View.</figcaption>
+    <figcaption>Komodor's Service Overview tab - the new default landing point for the Service View.</figcaption>
   </figure>
 
   <section>
     <h2 class="section">Context</h2>
-    <p>Komodor is a Kubernetes troubleshooting, observability, and reliability platform, and the Service View is where developers land the moment something breaks &mdash; and where they end up spending most of their time on the platform overall. Getting that screen right isn't a cosmetic problem; it's the difference between developers finding what they need in a crisis and hunting for it.</p>
+    <p>Komodor is a Kubernetes troubleshooting, observability, and reliability platform, and the Service View is where developers land the moment something breaks - and where they end up spending most of their time on the platform overall. Getting that screen right isn't a cosmetic problem; it's the difference between developers finding what they need in a crisis and hunting for it.</p>
   </section>
 
   <section>
     <h2 class="section">The problem</h2>
-    <p>Over time, Komodor had shipped a lot of genuinely good functionality into the Service View: deployment tracking, availability and reliability issues, YAML inspection, node views, cost data &mdash; but each had been added one at a time. Individually, every addition made sense. Together, they became what I described internally as "patchwork": a screen exposing a growing list of capabilities with no coherent structure for finding or understanding them.</p>
+    <p>Over time, Komodor had shipped a lot of genuinely good functionality into the Service View: deployment tracking, availability and reliability issues, YAML inspection, node views, cost data - but each had been added one at a time. Individually, every addition made sense. Together, they became what I described internally as "patchwork": a screen exposing a growing list of capabilities with no coherent structure for finding or understanding them.</p>
 
     <figure>
       <img src="images/img1-old-tab.png" alt="The default landing tab in the old Service View, showing years of accumulated features">
@@ -165,7 +165,7 @@
     <h2 class="section">Key stages</h2>
 
     <h3 class="stage">The patchwork problem</h3>
-    <p>The Service View mattered because it was one of the platform's main centers of attention: over 50% of all user sessions included a visit to a Service View. That's not a secondary screen &mdash; it's core real estate, and whatever structure it had would shape how developers experienced the whole product. The risk wasn't a broken screen, it was a quietly underused one, with valuable functionality sitting a click or two away from where developers actually looked.</p>
+    <p>The Service View mattered because it was one of the platform's main centers of attention: over 50% of all user sessions included a visit to a Service View. That's not a secondary screen - it's core real estate, and whatever structure it had would shape how developers experienced the whole product. The risk wasn't a broken screen, it was a quietly underused one, with valuable functionality sitting a click or two away from where developers actually looked.</p>
 
     <figure>
       <img src="images/img2-sessions-chart.png" alt="Chart showing total sessions versus sessions that included a Service View visit">
@@ -173,17 +173,17 @@
     </figure>
 
     <h3 class="stage">Making the case with data, not opinion</h3>
-    <p>To make the case concrete rather than opinion-based, I pulled Command+K navigation data (Komodor's global "go-to" shortcut) to see where developers were actually trying to go once they'd landed on a service. It told a clear story: while the Events tab was technically the designed landing view, ranked by actual navigation frequency developer attention concentrated somewhere else entirely &mdash; Pods, then Logs, then the status indicator cards (Deploy, Availability, Reliability), then YAML, well ahead of Events. That gap between the designed entry point and the actual usage pattern was the clearest evidence that the screen's structure no longer matched how people worked.</p>
+    <p>To make the case concrete rather than opinion-based, I pulled Command+K navigation data (Komodor's global "go-to" shortcut) to see where developers were actually trying to go once they'd landed on a service. It told a clear story: while the Events tab was technically the designed landing view, ranked by actual navigation frequency developer attention concentrated somewhere else entirely - Pods, then Logs, then the status indicator cards (Deploy, Availability, Reliability), then YAML, well ahead of Events. That gap between the designed entry point and the actual usage pattern was the clearest evidence that the screen's structure no longer matched how people worked.</p>
 
     <figure>
       <img src="images/img3-cmdk-distribution.png" alt="Distribution chart of where users navigate to via the Cmd+K global search">
-      <figcaption>The distribution of "where users go," via the Cmd+K global search &mdash; the green (deployment) basically means service in Komodor's terms.</figcaption>
+      <figcaption>The distribution of "where users go," via the Cmd+K global search - the green (deployment) basically means service in Komodor's terms.</figcaption>
     </figure>
 
-    <p>Rather than pitching a feature list, I framed the opportunity around the developer persona: the Service View is where developers spend most of their time because it's what they care about &mdash; their service, their problem, their blast radius. That gave me one design principle to hold the rest of the proposal against: better expose Komodor's capabilities, new and old, to the developer persona at the moment they're already looking at what they care about.</p>
+    <p>Rather than pitching a feature list, I framed the opportunity around the developer persona: the Service View is where developers spend most of their time because it's what they care about - their service, their problem, their blast radius. That gave me one design principle to hold the rest of the proposal against: better expose Komodor's capabilities, new and old, to the developer persona at the moment they're already looking at what they care about.</p>
 
     <h3 class="stage">Initial designs</h3>
-    <p>My first pass at the Overview tab layout went into usability testing with real users, and it didn't hold up. Looking back, the layout ran on assumptions rather than the screen's actual job to be done, and it tried too hard to change an important part of the data &mdash; the events tab, while quickly navigated from, still let people glance at what recently happened and whether anything needed attention.</p>
+    <p>My first pass at the Overview tab layout went into usability testing with real users, and it didn't hold up. Looking back, the layout ran on assumptions rather than the screen's actual job to be done, and it tried too hard to change an important part of the data - the events tab, while quickly navigated from, still let people glance at what recently happened and whether anything needed attention.</p>
 
     <figure>
       <img src="images/img4-iteration-cumulative.png" alt="An early iteration testing a cumulative visualization for events">
@@ -197,7 +197,7 @@
 
     <figure>
       <img src="images/img6-iteration-metrics.png" alt="An iteration surfacing memory and CPU metrics up front">
-      <figcaption>Exploring surfacing more metric data &mdash; memory and CPU &mdash; up front.</figcaption>
+      <figcaption>Exploring surfacing more metric data - memory and CPU - up front.</figcaption>
     </figure>
 
     <figure>
@@ -205,12 +205,12 @@
       <figcaption>A version testing the concept of "scoring" as an indicator of service status and health.</figcaption>
     </figure>
 
-    <p>I reframed the design around a few questions: is my service okay right now? Or did something change recently? And if it's not okay, why &mdash; and where do I look? What else is this connected to, and to what effect? Reframing the layout around those questions turned the design from a collection of new ideas into something purposeful. That revised version went back through testing, and it worked &mdash; it gave developers a clear enough gain over the old, Events-first layout to justify the change.</p>
+    <p>I reframed the design around a few questions: is my service okay right now? Or did something change recently? And if it's not okay, why - and where do I look? What else is this connected to, and to what effect? Reframing the layout around those questions turned the design from a collection of new ideas into something purposeful. That revised version went back through testing, and it worked - it gave developers a clear enough gain over the old, Events-first layout to justify the change.</p>
   </section>
 
   <section>
     <h2 class="section">Final design</h2>
-    <p>The shipped result: a single Overview tab as the new default landing point for the Service View, replacing the old Events-first entry with a layout organized around what developers actually came to the screen to do &mdash; check their service, understand their problem, and see its blast radius.</p>
+    <p>The shipped result: a single Overview tab as the new default landing point for the Service View, replacing the old Events-first entry with a layout organized around what developers actually came to the screen to do - check their service, understand their problem, and see its blast radius.</p>
     <ul class="outcomes">
       <li>The Events section was kept, where people knew and liked it, but minimized to a quick glance.</li>
       <li>Pod data was surfaced alongside related resources to show connections.</li>
@@ -225,7 +225,7 @@
 
   <section>
     <h2 class="section">Impact</h2>
-    <p>The redesign shifted the Service View from a screen that had accumulated capability without structure to one with a deliberate entry point &mdash; closing the gap between where developers were designed to land and where the navigation data showed they actually wanted to go.</p>
+    <p>The redesign shifted the Service View from a screen that had accumulated capability without structure to one with a deliberate entry point - closing the gap between where developers were designed to land and where the navigation data showed they actually wanted to go.</p>
     <p>Beyond the screen itself, the persona-first framing gave the team a reusable filter for evaluating future feature additions to the Service View, so the same patchwork problem is less likely to re-accumulate silently over time.</p>
   </section>
 

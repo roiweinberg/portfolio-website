@@ -127,28 +127,28 @@
   <h1 class="title">Designing Klaudia: From Fragmented AI Features to a Persistent AI SRE Assistant</h1>
 
   <p class="tldr">
-    I redesigned Komodor's fragmented AI experience into a single, <b>persistent assistant</b> that "follows" an investigation across an entire cluster instead of being boxed into one resource. Adoption was instant &mdash; no onboarding or transition period was needed &mdash; and investigations got deeper and more exploratory, validating the thesis that root cause analysis naturally spans more than one resource.
+    I redesigned Komodor's fragmented AI experience into a single, <b>persistent assistant</b> that "follows" an investigation across an entire cluster instead of being boxed into one resource. Adoption was instant - no onboarding or transition period was needed - and investigations got deeper and more exploratory, validating the thesis that root cause analysis naturally spans more than one resource.
   </p>
 
   <figure>
     <img src="images/hero.png" alt="Klaudia, Komodor's AI SRE assistant, shown as a persistent side-by-side panel">
-    <figcaption>Klaudia &mdash; Komodor's persistent, side-by-side AI SRE assistant.</figcaption>
+    <figcaption>Klaudia - Komodor's persistent, side-by-side AI SRE assistant.</figcaption>
   </figure>
 
   <section>
     <h2 class="section">Context</h2>
     <p>Komodor is a Kubernetes troubleshooting, observability, and reliability platform. Klaudia is its AI assistant, built to investigate incidents, explain root causes, and act on fixes across a customer's clusters.</p>
-    <p>Klaudia's capabilities had grown the way most AI features do inside an existing product: one at a time, each built onto whatever area made sense in the moment. A logs analyzer here. Root cause analysis on issues there, and eventually the ability to "chat" and ask follow-up questions &mdash; but boxed into a tight space. As Klaudia grew more capable, she still showed up as a handful of disconnected buttons, each aware only of the single resource it was bolted onto.</p>
-    <p>The target user is an SRE or developer dealing with an issue &mdash; moving between a failed deployment, a related service, a node, and a configuration change, trying to piece together what actually happened.</p>
+    <p>Klaudia's capabilities had grown the way most AI features do inside an existing product: one at a time, each built onto whatever area made sense in the moment. A logs analyzer here. Root cause analysis on issues there, and eventually the ability to "chat" and ask follow-up questions - but boxed into a tight space. As Klaudia grew more capable, she still showed up as a handful of disconnected buttons, each aware only of the single resource it was bolted onto.</p>
+    <p>The target user is an SRE or developer dealing with an issue - moving between a failed deployment, a related service, a node, and a configuration change, trying to piece together what actually happened.</p>
   </section>
 
   <section>
     <h2 class="section">The problem</h2>
-    <p>Klaudia's AI capabilities were fragmented across surfaces and bound to single resources, so she couldn't follow an investigation as it naturally moved across a cluster. Two things converged into the real motivation for this project: fragmentation &mdash; each capability lived on its own surface, with its own entry point and its own memory &mdash; and resource-limited context, since real root cause analysis rarely stays inside a single resource.</p>
+    <p>Klaudia's AI capabilities were fragmented across surfaces and bound to single resources, so she couldn't follow an investigation as it naturally moved across a cluster. Two things converged into the real motivation for this project: fragmentation - each capability lived on its own surface, with its own entry point and its own memory - and resource-limited context, since real root cause analysis rarely stays inside a single resource.</p>
 
     <figure>
       <img src="images/img1-adhoc-logs.png" alt="An early, isolated AI log-analysis feature bolted onto a single resource">
-      <figcaption>The ad-hoc log analysis &mdash; an early, isolated AI feature bolted onto a single resource.</figcaption>
+      <figcaption>The ad-hoc log analysis - an early, isolated AI feature bolted onto a single resource.</figcaption>
     </figure>
 
     <figure>
@@ -157,13 +157,13 @@
     </figure>
 
     <p>Underneath the UX pain points was a business one: Klaudia was gaining new capabilities (with the rise of MCPs, skills, and similar), but a fragmented, resource-limited presence meant the product's perceived intelligence was lagging behind its actual intelligence, and behind the market. The design challenge became: how might Klaudia follow the investigation instead of being tied to the feature?</p>
-    <p>Any redesign had to work within Komodor's existing product &mdash; Klaudia's role was to augment the Kubernetes platform, not replace it &mdash; and it couldn't simply remove the entry points users already knew and relied on.</p>
+    <p>Any redesign had to work within Komodor's existing product - Klaudia's role was to augment the Kubernetes platform, not replace it - and it couldn't simply remove the entry points users already knew and relied on.</p>
   </section>
 
   <section>
     <h2 class="section">Outcome</h2>
     <ul class="outcomes">
-      <li>Adoption was instant &mdash; no onboarding or transition period was needed.</li>
+      <li>Adoption was instant - no onboarding or transition period was needed.</li>
       <li>Investigations got deeper and more exploratory, validating the thesis that root cause analysis naturally spans more than one resource.</li>
     </ul>
   </section>
@@ -182,24 +182,24 @@
     </figure>
 
     <h3 class="stage">Design challenges</h3>
-    <p>Choosing side-by-side raised a second problem: once Klaudia could relate to "the resource on stage," users needed to know what the conversation was actually about. We introduced a context chip in the chat input showing the active resource &mdash; modeled after how similar context is surfaced in developer IDEs like VS Code &mdash; with the ability to pin or disable it while navigating the platform.</p>
+    <p>Choosing side-by-side raised a second problem: once Klaudia could relate to "the resource on stage," users needed to know what the conversation was actually about. We introduced a context chip in the chat input showing the active resource - modeled after how similar context is surfaced in developer IDEs like VS Code - with the ability to pin or disable it while navigating the platform.</p>
 
     <figure>
       <img src="images/img4-context-chip.png" alt="A context chip in the chat input showing the active resource">
-      <figcaption>The context chip &mdash; modeled after how similar context is shown in developer IDEs like VS Code, with the ability to pin or disable it while navigating the platform.</figcaption>
+      <figcaption>The context chip - modeled after how similar context is shown in developer IDEs like VS Code, with the ability to pin or disable it while navigating the platform.</figcaption>
     </figure>
 
-    <p>As Klaudia gained new capabilities &mdash; from data collection to making actual changes in a customer's environment &mdash; transparency and the "human in the loop" idea became leading values. We surfaced what tools Klaudia was using during a session, so users could see what was actually being done, and, more importantly, approve or reject what she was about to do.</p>
+    <p>As Klaudia gained new capabilities - from data collection to making actual changes in a customer's environment - transparency and the "human in the loop" idea became leading values. We surfaced what tools Klaudia was using during a session, so users could see what was actually being done, and, more importantly, approve or reject what she was about to do.</p>
 
     <figure>
       <img src="images/img5-tools.png" alt="A list of tools Klaudia can invoke, from data collection to environment changes">
-      <figcaption>Some of the "tools" Klaudia can invoke &mdash; ranging from basic data collection to performing actual changes in a customer's environment.</figcaption>
+      <figcaption>Some of the "tools" Klaudia can invoke - ranging from basic data collection to performing actual changes in a customer's environment.</figcaption>
     </figure>
 
-    <p>Another key constraint was that we couldn't just replace what was already working and familiar &mdash; every existing entry point into an AI feature represented a moment users had already learned. Removing them to force a single unified trigger would have traded the fragmentation problem for a new one. Instead, we turned each trigger into a split action: the primary action still starts a focused new chat scoped to that resource, exactly as before, while a second option, "Add to active chat," lets the user fold that same trigger into whatever investigation is already open. No feature was removed &mdash; what changed is that each one now feeds the same persistent conversation instead of an ad-hoc monologue.</p>
+    <p>Another key constraint was that we couldn't just replace what was already working and familiar - every existing entry point into an AI feature represented a moment users had already learned. Removing them to force a single unified trigger would have traded the fragmentation problem for a new one. Instead, we turned each trigger into a split action: the primary action still starts a focused new chat scoped to that resource, exactly as before, while a second option, "Add to active chat," lets the user fold that same trigger into whatever investigation is already open. No feature was removed - what changed is that each one now feeds the same persistent conversation instead of an ad-hoc monologue.</p>
 
     <h3 class="stage">Validating the approach</h3>
-    <p>Rather than a formal usability testing round, we opened the feature internally once it was stable enough for real use &mdash; Komodor's own developers used it against real clusters during their day-to-day work. The response was positive: the side-by-side model and split-action pattern held up under actual investigation use, which gave us the confidence to move toward a broader rollout.</p>
+    <p>Rather than a formal usability testing round, we opened the feature internally once it was stable enough for real use - Komodor's own developers used it against real clusters during their day-to-day work. The response was positive: the side-by-side model and split-action pattern held up under actual investigation use, which gave us the confidence to move toward a broader rollout.</p>
 
     <figure>
       <img src="images/img6-logs-implemented.png" alt="The implemented Klaudia design inside the logs section">
@@ -213,7 +213,7 @@
 
     <figure>
       <img src="images/img7-final-design.png" alt="The final Klaudia design, a persistent side-by-side assistant for Kubernetes troubleshooting">
-      <figcaption>Final design &mdash; a simple, persistent, side-by-side assistant to help developers with their Kubernetes troubleshooting.</figcaption>
+      <figcaption>Final design - a simple, persistent, side-by-side assistant to help developers with their Kubernetes troubleshooting.</figcaption>
     </figure>
 
     <figure>
@@ -231,7 +231,7 @@
     <h2 class="section">Impact</h2>
     <p>The rollout was gradual rather than a single switch-flip, and the response was immediate:</p>
     <ul class="outcomes">
-      <li>Adoption was instant &mdash; no onboarding period was required.</li>
+      <li>Adoption was instant - no onboarding period was required.</li>
       <li>Investigations became visibly deeper and more exploratory, validating the core thesis that root cause analysis naturally spans more than one resource.</li>
       <li>The split between the Kubernetes platform and the AI assistant was accepted naturally, positioning Klaudia to evolve from a set of AI features into a true AI SRE assistant.</li>
       <li>Internal developers who used the feature during stabilization gave positive feedback on the side-by-side, context-aware model before it rolled out more broadly.</li>
@@ -241,8 +241,8 @@
 
   <section>
     <h2 class="section">Closing the loop</h2>
-    <p>The new design solved where Klaudia lived. It didn't solve whether what she said was any good &mdash; and now that users were approving real actions she proposed, that question mattered more than ever.</p>
-    <p>The solution was a 1&ndash;6 rating sitting directly under the investigation itself &mdash; no modal, no separate flow people would just skip. A score of 4 or below triggers a quick follow-up: a reason chip (wrong root cause, missing detail, not actionable, among others) plus an optional free-text field, so a bad score comes with why.</p>
+    <p>The new design solved where Klaudia lived. It didn't solve whether what she said was any good - and now that users were approving real actions she proposed, that question mattered more than ever.</p>
+    <p>The solution was a 1&ndash;6 rating sitting directly under the investigation itself - no modal, no separate flow people would just skip. A score of 4 or below triggers a quick follow-up: a reason chip (wrong root cause, missing detail, not actionable, among others) plus an optional free-text field, so a bad score comes with why.</p>
 
     <figure>
       <img src="images/img10-feedback-widget.png" alt="The inline feedback rating widget below a Klaudia investigation">
@@ -251,10 +251,10 @@
 
     <figure>
       <img src="images/img11-feedback-form.png" alt="The short follow-up feedback form with selectable reasons and a free-text field">
-      <figcaption>The feedback form was short &mdash; letting users select a reason for their discontent and write any additional message directly inside the product.</figcaption>
+      <figcaption>The feedback form was short - letting users select a reason for their discontent and write any additional message directly inside the product.</figcaption>
     </figure>
 
-    <p>Individually, these ratings are just noise. Rolled up into a dashboard &mdash; average score, satisfaction split, and a ranked "top 5 reasons for low scores" &mdash; they become a trackable signal the team can actually prioritize against. It's the other half of the same bet the side-by-side model made: continuity and visible context aren't enough if there's no way to know when Klaudia's reasoning fell short.</p>
+    <p>Individually, these ratings are just noise. Rolled up into a dashboard - average score, satisfaction split, and a ranked "top 5 reasons for low scores" - they become a trackable signal the team can actually prioritize against. It's the other half of the same bet the side-by-side model made: continuity and visible context aren't enough if there's no way to know when Klaudia's reasoning fell short.</p>
 
     <figure>
       <img src="images/img12-feedback-dashboard.png" alt="A feedback dashboard showing average score, satisfaction split, and top reasons for low scores">

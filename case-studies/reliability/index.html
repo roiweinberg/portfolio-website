@@ -137,7 +137,7 @@
 
   <section>
     <h2 class="section">From a list to impact groups</h2>
-    <p>The first version of this was a flat list of violations. It worked, but it didn't answer the question users actually had first: what is this actually affecting? We restructured the top-level view around impact groups &mdash; Node Pressure, Degraded Service, Cluster Upgrades &mdash; each summarized by the outcomes it's causing (e.g. "12 noisy neighbors, 456 victims, 7 under-provisioned workloads") before a user ever drills into an individual rule.</p>
+    <p>The first version of this was a flat list of violations. It worked, but it didn't answer the question users actually had first: what is this actually affecting? We restructured the top-level view around impact groups - Node Pressure, Degraded Service, Cluster Upgrades - each summarized by the outcomes it's causing (e.g. "12 noisy neighbors, 456 victims, 7 under-provisioned workloads") before a user ever drills into an individual rule.</p>
 
     <figure>
       <img src="images/img1-impact-groups.png" alt="The three impact groups: Degraded Service, Node Pressure, and Cluster Updates">
@@ -149,9 +149,9 @@
     <h2 class="section">A consistent shell, an adaptive core</h2>
     <p>Every violation detail view followed the same three-part structure: what happened &rarr; why is it important &rarr; how to fix this. That consistency means users always know where to look. But the "what happened" section changes shape depending on the relevant data:</p>
     <ul class="outcomes">
-      <li><b>CPU throttling</b> &mdash; a timeline heatmap and hourly throttle bar, because this is fundamentally a question of when and for how long.</li>
-      <li><b>Cluster end-of-life</b> &mdash; a static fact card (version, EOL date, time since) plus a warning callout, because this is a point-in-time state, not a trend.</li>
-      <li><b>Container restarts</b> &mdash; a stacked bar chart broken down by failure reason (CrashLoopBackOff, OOM, health check failures), because this is a frequency-and-cause problem.</li>
+      <li><b>CPU throttling</b> - a timeline heatmap and hourly throttle bar, because this is fundamentally a question of when and for how long.</li>
+      <li><b>Cluster end-of-life</b> - a static fact card (version, EOL date, time since) plus a warning callout, because this is a point-in-time state, not a trend.</li>
+      <li><b>Container restarts</b> - a stacked bar chart broken down by failure reason (CrashLoopBackOff, OOM, health check failures), because this is a frequency-and-cause problem.</li>
     </ul>
 
     <figure style="margin-top: 40px;">
@@ -167,7 +167,7 @@
 
   <section>
     <h2 class="section">Quick fixes, where they existed</h2>
-    <p>Some violations included inline actions &mdash; reconfigure resources, edit HPA &mdash; letting users act directly from the violation rather than context-switching elsewhere. These leaned on capabilities the platform had already built, so the design layered a fix path onto existing infrastructure rather than inventing new backend work.</p>
+    <p>Some violations included inline actions - reconfigure resources, edit HPA - letting users act directly from the violation rather than context-switching elsewhere. These leaned on capabilities the platform had already built, so the design layered a fix path onto existing infrastructure rather than inventing new backend work.</p>
 
     <figure>
       <img src="images/img5-quick-fixes.png" alt="An inline quick-fix action available directly from a violation">
@@ -177,7 +177,7 @@
 
   <section>
     <h2 class="section">Why this holds up as a pattern</h2>
-    <p>The interesting design decision here wasn't any single screen &mdash; it was recognizing that a template needs to flex its middle section to match what the data actually needs to say, while keeping the framing (what / why / how) constant so users never have to relearn the page.</p>
+    <p>The interesting design decision here wasn't any single screen - it was recognizing that a template needs to flex its middle section to match what the data actually needs to say, while keeping the framing (what / why / how) constant so users never have to relearn the page.</p>
   </section>
 
   <footer>

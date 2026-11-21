@@ -127,12 +127,12 @@
   <h1 class="title">Auto Remediation (Self Healing)</h1>
 
   <p class="tldr">
-    Auto-remediation was a feature we'd wanted to build for a long time &mdash; the idea was that Komodor shouldn't just tell you something is wrong, it should be able to fix it. This was an early experiment to test that idea in practice: AI identified what was wrong, and <b>a policy decided whether and how to act</b> &mdash; no chat, no back-and-forth. It never went GA, but it shaped a lot of how we thought about trust and control in everything that came after.
+    Auto-remediation was a feature we'd wanted to build for a long time - the idea was that Komodor shouldn't just tell you something is wrong, it should be able to fix it. This was an early experiment to test that idea in practice: AI identified what was wrong, and <b>a policy decided whether and how to act</b> - no chat, no back-and-forth. It never went GA, but it shaped a lot of how we thought about trust and control in everything that came after.
   </p>
 
   <figure>
     <img src="images/hero.png" alt="A self-healing event drawer showing a step-by-step audit timeline">
-    <figcaption>A dedicated "self-healing" event drawer that explains what happened, what changed, and the final outcome &mdash; a full, step-by-step audit timeline.</figcaption>
+    <figcaption>A dedicated "self-healing" event drawer that explains what happened, what changed, and the final outcome - a full, step-by-step audit timeline.</figcaption>
   </figure>
 
   <section>
@@ -142,7 +142,7 @@
 
   <section>
     <h2 class="section">Guardrails before autonomy</h2>
-    <p>Detection could tell you what was wrong, but it couldn't tell you what was safe to do about it &mdash; that judgment had to come from humans. Policies scoped exactly what was allowed &mdash; by cluster, by action type, by resource kind. A "Production" policy could be locked down to reruns and restarts only, while "Non-Prod" could allow broader edits. This wasn't a detail bolted on after the fact; it was the thing that made the feature safe to ship at all.</p>
+    <p>Detection could tell you what was wrong, but it couldn't tell you what was safe to do about it - that judgment had to come from humans. Policies scoped exactly what was allowed - by cluster, by action type, by resource kind. A "Production" policy could be locked down to reruns and restarts only, while "Non-Prod" could allow broader edits. This wasn't a detail bolted on after the fact; it was the thing that made the feature safe to ship at all.</p>
 
     <figure>
       <img src="images/img1-policy-govern.png" alt="A policy governing what actions are and aren't allowed to run automatically">
@@ -156,13 +156,13 @@
 
     <figure>
       <img src="images/img2-policy-config.png" alt="The policy builder, showing named actions scoped to specific resource kinds and environments">
-      <figcaption>The policy configuration &mdash; explicitly stating what actions are allowed to perform automatically, and on which environments (clusters).</figcaption>
+      <figcaption>The policy configuration - explicitly stating what actions are allowed to perform automatically, and on which environments (clusters).</figcaption>
     </figure>
   </section>
 
   <section>
     <h2 class="section">Why this holds up as a pattern</h2>
-    <p>The feature itself didn't survive &mdash; detection alone wasn't a strong enough foundation to justify the trust automated action was asking for. But the pattern did: automation earns trust through visibility (a clear audit trail) and constraint (explicit, human-authored boundaries), not through confidence in the system's own judgment. That gap between detecting a problem and safely acting on it is exactly what a reasoning layer like Klaudia was later built to close.</p>
+    <p>The feature itself didn't survive - detection alone wasn't a strong enough foundation to justify the trust automated action was asking for. But the pattern did: automation earns trust through visibility (a clear audit trail) and constraint (explicit, human-authored boundaries), not through confidence in the system's own judgment. That gap between detecting a problem and safely acting on it is exactly what a reasoning layer like Klaudia was later built to close.</p>
   </section>
 
   <footer>
