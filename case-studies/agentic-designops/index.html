@@ -1,4 +1,4 @@
-<title>Agentic DesignOps — Roi Weinberg</title>
+<title>Agentic DesignOps - Roi Weinberg</title>
 <style>
   @font-face {
     font-family: 'Archivo';
@@ -127,19 +127,19 @@
   <h1 class="title">Agentic DesignOps</h1>
 
   <p class="tldr">
-    I laid the foundation for a <b>new design system</b> by using <b>Claude Code</b> to work directly against the repo in GitHub — building and defining a common design language so that the developers building the product (and the LLMs) could generate a coherent, unified product.
+    I laid the foundation for a <b>new design system</b> by using <b>Claude Code</b> to work directly against the repo in GitHub - building and defining a common design language so that the developers building the product (and the LLMs) could generate a coherent, unified product.
   </p>
 
   <figure>
     <img src="images/hero-tokens.png" alt="Color primitive scales and a semantic token table, audited directly from the repo and rebuilt in Figma">
-    <figcaption>The token audit — colors extracted directly from the codebase, mapped into a Figma-checkable table.</figcaption>
+    <figcaption>The token audit - colors extracted directly from the codebase, mapped into a Figma-checkable table.</figcaption>
   </figure>
 
   <section>
     <h2 class="section">Context</h2>
-    <p>AgentOps was a completely new product initiative at Komodor. The initial "design" work happened directly against a live codebase — not a Figma file handed to engineering to build. The product was being built by developers in a very agile, agentic way, using Shadcn and Tailwind as the base front-end libraries.</p>
+    <p>AgentOps was a completely new product initiative at Komodor. The initial "design" work happened directly against a live codebase - not a Figma file handed to engineering to build. The product was being built by developers in a very agile, agentic way, using Shadcn and Tailwind as the base front-end libraries.</p>
     <p>Before any real design decisions could govern how the product looked, the system meant to govern it had to be defined and established first.</p>
-    <p>Rather than redesign the system in Figma and align it with engineering afterward, I flipped the order: read the repository first, and let what was actually shipped define the design system — not the other way around. The product wasn't client-facing yet, so the guiding thought was simple — I could always change the primary button color later, but first I needed a primary button color definition, consistent across the product.</p>
+    <p>Rather than redesign the system in Figma and align it with engineering afterward, I flipped the order: read the repository first, and let what was actually shipped define the design system - not the other way around. The product wasn't client-facing yet, so the guiding thought was simple - I could always change the primary button color later, but first I needed a primary button color definition, consistent across the product.</p>
   </section>
 
   <section>
@@ -156,12 +156,12 @@
     <h2 class="section">Key stages</h2>
 
     <h3 class="stage">Reading the repo first</h3>
-    <p>Every design system wants to believe it's the source of truth. On a product that's already live, that's rarely true on day one — design files were non-existent, and the docs and the code each described a slightly different version of the product, with the gap growing the longer nobody checked.</p>
-    <p>AgentOps had colors before it had a color system: a background picked here, a border there, an accent color chosen once and reused from memory — all correct on screen, none of it traceable to one source.</p>
+    <p>Every design system wants to believe it's the source of truth. On a product that's already live, that's rarely true on day one - design files were non-existent, and the docs and the code each described a slightly different version of the product, with the gap growing the longer nobody checked.</p>
+    <p>AgentOps had colors before it had a color system: a background picked here, a border there, an accent color chosen once and reused from memory - all correct on screen, none of it traceable to one source.</p>
 
     <h3 class="stage">Defining the color palette</h3>
-    <p>I used Claude Code to work directly against the project's repo in GitHub. The LLM scanned for every color in use and documented them as an audit in Figma — turning the color that had been used as the "accent" into a proper token, and defining a limited palette in the process.</p>
-    <p>The next step was expanding the existing colors into a full 50–950 scale: a limited, formalized set of options for visual design. From there came the token layers — primitives and semantics — enough to properly support the light and dark themes already in use.</p>
+    <p>I used Claude Code to work directly against the project's repo in GitHub. The LLM scanned for every color in use and documented them as an audit in Figma - turning the color that had been used as the "accent" into a proper token, and defining a limited palette in the process.</p>
+    <p>The next step was expanding the existing colors into a full 50–950 scale: a limited, formalized set of options for visual design. From there came the token layers - primitives and semantics - enough to properly support the light and dark themes already in use.</p>
 
     <figure>
       <img src="images/token-flow.png" alt="Diagram showing a hex value becoming a primitive scale value, then a semantic token">
@@ -169,7 +169,7 @@
     </figure>
 
     <h3 class="stage">Testing the new color system</h3>
-    <p>Once I was happy with the shape of the palette and the basic tokens, I tested it by defining the basic button component. The existing button had a representation in an internal, storybook-like library, and examining it closely surfaced a gap: hover states were opacity-based — fine for rapid prototyping, but not for a long-term consistent system, since you can't have the hover color shift on every surface.</p>
+    <p>Once I was happy with the shape of the palette and the basic tokens, I tested it by defining the basic button component. The existing button had a representation in an internal, storybook-like library, and examining it closely surfaced a gap: hover states were opacity-based - fine for rapid prototyping, but not for a long-term consistent system, since you can't have the hover color shift on every surface.</p>
     <p>The color palette proved sufficient to define every state the basic button needed.</p>
 
     <figure>
@@ -178,13 +178,13 @@
     </figure>
 
     <h3 class="stage">From reference to enforcement</h3>
-    <p>Once the token layer could be trusted against the repo, the harder problem was keeping new design work grounded in that reality as the product kept shipping — especially once an AI coding agent started working directly inside the codebase, with full visibility into everything living there.</p>
-    <p>I wrote specific skills to tell the AI agents (the developers) what they were and weren't allowed to do — an ongoing, evolving effort, but one where clearly documenting each decision matters. What designers usually take for granted has to be made explicit in the age of AI — it keeps the LLM from making assumptions, and helps keep the product unified.</p>
+    <p>Once the token layer could be trusted against the repo, the harder problem was keeping new design work grounded in that reality as the product kept shipping - especially once an AI coding agent started working directly inside the codebase, with full visibility into everything living there.</p>
+    <p>I wrote specific skills to tell the AI agents (the developers) what they were and weren't allowed to do - an ongoing, evolving effort, but one where clearly documenting each decision matters. What designers usually take for granted has to be made explicit in the age of AI - it keeps the LLM from making assumptions, and helps keep the product unified.</p>
   </section>
 
   <section>
     <h2 class="section">Learnings &amp; next steps</h2>
-    <p>Using Claude Code to work directly against a live repo was a genuinely fun way to work. Learning how to ask for exactly what I needed — and making sure the agent wasn't overstepping its bounds or losing context — was its own skill.</p>
+    <p>Using Claude Code to work directly against a live repo was a genuinely fun way to work. Learning how to ask for exactly what I needed - and making sure the agent wasn't overstepping its bounds or losing context - was its own skill.</p>
     <p>The base work of a design system's logic can be accelerated immensely with LLMs, but defining the actual design patterns for a specific product is still not easy: a lot of what feels obvious to a designer is rarely clear to an agent trying to build a UI on its own.</p>
   </section>
 
